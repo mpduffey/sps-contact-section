@@ -12,10 +12,22 @@ var core_1 = require('@angular/core');
 var SpsContactSection = (function () {
     function SpsContactSection() {
     }
+    __decorate([
+        core_1.Input("contact-text"), 
+        __metadata('design:type', Object)
+    ], SpsContactSection.prototype, "contactText", void 0);
+    __decorate([
+        core_1.Input("contact-email"), 
+        __metadata('design:type', Object)
+    ], SpsContactSection.prototype, "contactEmail", void 0);
+    __decorate([
+        core_1.Input("contact-phone"), 
+        __metadata('design:type', Object)
+    ], SpsContactSection.prototype, "contactPhone", void 0);
     SpsContactSection = __decorate([
         core_1.Component({
             selector: 'sps-contact-section',
-            template: "\n\t\t<section id=\"contact\" class=\"section-padding bg-image overlay-dark dark-bg text-center\" data-stellar-background-ratio=\"0.5\" data-background-img=\"img/full/33.jpg\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<p>Contact Wisconsin Women for Trump</p>\n\t\t\t\t\t\t<p><a href=\"mailto:wwft2016@gmail.com\" target=\"_top\">wwft2016@gmail.com</a><p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</section>\n\t",
+            template: "\n\t\t<section id=\"contact\" class=\"section-padding bg-image overlay-dark dark-bg text-center\" data-stellar-background-ratio=\"0.5\" data-background-img=\"img/full/33.jpg\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<p>{{contactText}}</p>\n\t\t\t\t\t\t<p *ngIf=\"contactEmail\"><a href=\"mailto:{{contactEmail}}\" target=\"_top\">{{contactEmail}}</a><p>\n\t\t\t\t\t\t<p *ngIf=\"contactPhone\">contactPhone</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</section>\n\t",
             styles: ["\n\t\t.dark-bg a:hover {color: white;}\n\t"]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
 	selector:			'sps-contact-section',
@@ -7,8 +7,9 @@ import {Component} from '@angular/core';
 			<div class="container">
 				<div class="row">
 					<div>
-						<p>Contact Wisconsin Women for Trump</p>
-						<p><a href="mailto:wwft2016@gmail.com" target="_top">wwft2016@gmail.com</a><p>
+						<p>{{contactText}}</p>
+						<p *ngIf="contactEmail"><a href="mailto:{{contactEmail}}" target="_top">{{contactEmail}}</a><p>
+						<p *ngIf="contactPhone">contactPhone</p>
 					</div>
 				</div>
 			</div>
@@ -20,5 +21,7 @@ import {Component} from '@angular/core';
 })
 
 export class SpsContactSection {
-	
+	@Input("contact-text") contactText;
+	@Input("contact-email") contactEmail;
+	@Input("contact-phone") contactPhone;
 }
